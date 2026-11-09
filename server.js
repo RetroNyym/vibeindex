@@ -181,6 +181,20 @@ const server = http.createServer(async (req, res) => {
       return;
     }
 
+    // Static docs (banner etc.)
+    if (path.startsWith("/docs/")) {
+      const file = require("path").join(__dirname, "docs", path.replace("/docs/", "")
+        .replace(/\.\./g, ""));
+      if (require("fs").existsSync(file)) {
+        const ext = path.endsWith(".svg") ? "image/svg+xml" : "application/octet-stream";
+        res.writeHead(200, { "Content-Type": ext });
+        res.end(require("fs").readFileSync(file));
+      } else {
+        res.writeHead(404).end();
+      }
+      return;
+    }
+
     // JSON API
     if (path.startsWith("/api/analyze/")) {
       const info = ownerRepo(path.replace("/api/analyze/", ""));

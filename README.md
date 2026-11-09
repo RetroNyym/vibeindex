@@ -2,10 +2,8 @@
 
 ![VibeIndex banner](docs/banner.svg)
 
-> Her badge bir tanıtımdır. Koyduğu her README, aracın büyüme motoru olarak çalışır.
-
-VibeIndex, 2026'nın tanımlayıcı sorusunu — **"Bu repo aslında ne kadar vibe-coded?"** — herhangi bir
-public GitHub deposu için yanıtlayan, sıfır bağımlılıklı bir web servisidir.
+VibeIndex, **"Bu repo aslında ne kadar vibe-coded?"** sorusunu herhangi bir public GitHub deposu için
+yanıtlayan, sıfır bağımlılıklı bir web servisidir.
 
 `owner/repo` yapıştır → **Vibe Index (0–100)**, bir hüküm, arkasındaki **kanıt zinciri** ve
 paylaşılabilir bir **SVG kart + README badge'i** al.
@@ -22,12 +20,12 @@ paylaşılabilir bir **SVG kart + README badge'i** al.
 └──────────────────────────────────────────────┘
 ```
 
-## Neden bu bot ses getirir? 🚀
+## Neden VibeIndex? 🚀
 
 - **Repo-bağımsız** — herhangi bir public repoda çalışır; kurulum, giriş, config gerekmez.
-- **Kendini yayan** — çıktı, README'ye eklenebilen bir kart/badge; her görsel ücretsiz bir reklam.
-- **Meme-lenebilir** — kullanıcılar kendi yüzdesinin ekran görüntüsünü alıp tartışmaya açar. Tartışma = erişim.
-- **Doğru an** — "vibe-coded" tespit araçları hâlâ gelişme aşamasında; buna karşılık AI destekli commit'ler 2026'nın commit akışını domine ediyor.
+- **Paylaşılabilir çıktı** — sonuç README'ye eklenebilen bir kart/badge'tir.
+- **Şeffaf** — her puan, kanıt zinciriyle birlikte gösterilir; sinyaller ve ağırlıklar tabloda belgelenir.
+- **Uygun zamanlama** — "vibe-coded" tespit araçları hâlâ gelişme aşamasında; buna karşılık AI destekli commit'ler 2026'nın commit akışını domine ediyor.
 
 ## Hızlı Başlangıç
 

@@ -2,9 +2,9 @@
 
 ![VibeIndex banner](docs/banner.svg)
 
-> Every badge is an endorsement. Every README it lands on advertises the tool — the loop is the growth engine.
+VibeIndex answers a question developers increasingly ask about any public GitHub repository:
 
-VibeIndex answers the defining question of 2026 for any public GitHub repository:
+**"How much of this was actually vibe-coded?"**
 
 **"How much of this was actually vibe-coded?"**
 
@@ -22,12 +22,12 @@ Paste `owner/repo`, get a **Vibe Index (0–100)**, a verdict, the evidence trai
 └──────────────────────────────────────────────┘
 ```
 
-## Why it can make noise
+## Why VibeIndex?
 
 - **Repo-independent** — works for *any* public repository; no install, no login, no config.
-- **Self-propagating** — the output is an embeddable badge/card; every embed is free promotion.
-- **Meme-able** — people screenshot their percentage and argue about it. Controversy = reach.
-- **Right moment** — vibe-coded detection tools are barely established, while AI-assisted commits dominate 2026's commit stream.
+- **Shareable output** — results come as an SVG card and a README badge you can embed anywhere.
+- **Transparent** — every score ships with its evidence trail; signals and weights are documented in plain tables.
+- **Timely** — AI-agent commits dominate 2026's stream, while detection tooling is still young and sparse.
 
 ## Quick start
 
