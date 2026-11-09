@@ -8,6 +8,8 @@ VibeLens answers the defining question of 2026 for any public GitHub repository:
 
 Paste `owner/repo`, get a **Vibe Index (0–100)**, a verdict, the evidence trail behind it, and a shareable SVG card + README badge.
 
+![example vibe card](docs/example-card.svg)
+
 ```
 ┌──────────────────────────────────────────────┐
 │ facebook/react                               │

@@ -8,6 +8,8 @@ public GitHub deposu için yanıtlayan, sıfır bağımlılıklı bir web servis
 `owner/repo` yapıştır → **Vibe Index (0–100)**, bir hüküm, arkasındaki **kanıt zinciri** ve
 paylaşılabilir bir **SVG kart + README badge'i** al.
 
+![örnek vibe kartı](docs/example-card.svg)
+
 ```
 ┌──────────────────────────────────────────────┐
 │ facebook/react                               │
