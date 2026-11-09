@@ -1,0 +1,21 @@
+{
+  "name": "vibelens",
+  "version": "0.1.0",
+  "description": "VibeLens — checks any public GitHub repo and answers the 2026 question: how much of this code was actually written by an AI?",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "github",
+    "vibe-coding",
+    "ai",
+    "badge",
+    "svg",
+    "bot"
+  ],
+  "license": "MIT"
+}
