@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-label="VibeIndex banner">
+  <style>
+    text { font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,Arial,sans-serif; }
+    .mono { font-family:'Cascadia Code','Consolas','SF Mono',monospace; }
+  </style>
+  <defs>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2ea44f"/>
+      <stop offset=".5" stop-color="#d29922"/>
+      <stop offset="1" stop-color="#f85149"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3ddc84" stop-opacity="0"/>
+      <stop offset="1" stop-color="#3ddc84" stop-opacity=".06"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#d29922" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#d29922" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1280" height="640" fill="#0d1117"/>
+  <rect width="1280" height="640" fill="url(#sheen)"/>
+
+  <!-- faint grid -->
+  <g stroke="#21262d" stroke-width="1">
+    <path d="M0 80h1280M0 160h1280M0 240h1280M0 320h1280M0 400h1280M0 480h1280M0 560h1280"/>
+    <path d="M80 0v640M160 0v640M240 0v640M320 0v640M400 0v640M480 0v640M560 0v640M640 0v640M720 0v640M800 0v640M880 0v640M960 0v640M1040 0v640M1120 0v640M1200 0v640"/>
+  </g>
+
+  <!-- left: brand -->
+  <circle cx="240" cy="330" r="260" fill="url(#glow)"/>
+  <text x="96" y="212" font-size="64" font-weight="800" fill="url(#brand)" letter-spacing="-2">✦ VibeIndex</text>
+  <text x="96" y="274" font-size="30" fill="#e6edf3" font-weight="600">How much of this repo was vibe-coded?</text>
+  <g>
+    <rect x="96" y="316" width="222" height="34" rx="17" fill="#161b22" stroke="#30363d"/>
+    <text x="207" y="339" font-size="16" fill="#8b949e" text-anchor="middle" font-weight="600">any public repo</text>
+    <text x="342" y="339" font-size="20" fill="#8b949e">→</text>
+    <rect x="376" y="316" width="238" height="34" rx="17" fill="#161b22" stroke="#30363d"/>
+    <text x="495" y="339" font-size="16" fill="#e6edf3" text-anchor="middle" font-weight="700">Vibe Index 0–100</text>
+  </g>
+  <text x="96" y="400" font-size="17" fill="#8b949e">reads the last 100 commits · catches Copilot, Claude, Cursor, Devin trailers</text>
+  <text x="96" y="426" font-size="17" fill="#8b949e">returns evidence, a shareable SVG card and a README badge</text>
+
+  <!-- pill row -->
+  <g font-size="15" font-weight="700">
+    <rect x="96" y="472" width="196" height="36" rx="18" fill="#23392b" stroke="#2ea44f"/>
+    <text x="194" y="495" fill="#8ce99a" text-anchor="middle">✍️ HUMAN-CERTIFIED</text>
+    <rect x="308" y="472" width="164" height="36" rx="18" fill="#2c3624" stroke="#8ce99a"/>
+    <text x="390" y="495" fill="#8ce99a" text-anchor="middle">🧠 HUMAN-DRIVEN</text>
+    <rect x="488" y="472" width="160" height="36" rx="18" fill="#3b2f14" stroke="#d29922"/>
+    <text x="568" y="495" fill="#e3b341" text-anchor="middle">🤝 AI-ASSISTED</text>
+    <rect x="664" y="472" width="158" height="36" rx="18" fill="#4d1c1c" stroke="#f85149"/>
+    <text x="743" y="495" fill="#ff7b72" text-anchor="middle">🤖 VIBE-CODED</text>
+  </g>
+
+  <!-- right: mock card -->
+  <g transform="translate(800 170)">
+    <rect width="400" height="300" rx="14" fill="#161b22" stroke="#30363d"/>
+    <circle cx="330" cy="86" r="96" fill="url(#glow)"/>
+
+    <text x="28" y="44" font-size="18" font-weight="700" fill="#e6edf3" class="mono">facebook/react</text>
+    <text x="28" y="68" font-size="13" fill="#8b949e">★ 240k · 20k forks · JavaScript</text>
+
+    <rect x="28" y="88" width="150" height="26" rx="13" fill="#d29922"/>
+    <text x="103" y="105" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">🤝 AI-ASSISTED</text>
+
+    <!-- gauge -->
+    <circle cx="300" cy="128" r="52" fill="none" stroke="#21262d" stroke-width="13"/>
+    <circle cx="300" cy="128" r="52" fill="none" stroke="#d29922" stroke-width="13" stroke-linecap="round"
+      stroke-dasharray="163 327" transform="rotate(-90 300 128)"/>
+    <text x="300" y="136" font-size="34" font-weight="800" fill="#e6edf3" text-anchor="middle">50</text>
+
+    <text x="28" y="152" font-size="11" fill="#8b949e" letter-spacing="1.2">VIBE INDEX</text>
+    <text x="28" y="190" font-size="38" font-weight="800" fill="#d29922">50<tspan font-size="18" fill="#8b949e">%</tspan></text>
+
+    <text x="28" y="222" font-size="13" fill="#8b949e" class="mono">Co-Authored-By: Claude…</text>
+    <text x="28" y="244" font-size="13" fill="#8b949e" class="mono">Co-Authored-By: Claude…</text>
+    <text x="28" y="266" font-size="13" fill="#8b949e" class="mono">committer: copilot-swe[bot]</text>
+    <text x="28" y="288" font-size="12" fill="#8b949e">sampled 100 commits · evidence, not oracle</text>
+  </g>
+
+  <text x="1240" y="600" font-size="15" fill="#8b949e" text-anchor="end" class="mono">github.com/RetroNyym/vibeindex</text>
+</svg>

@@ -1,8 +1,10 @@
-# ✦ VibeLens
+# ✦ VibeIndex
+
+![VibeIndex banner](docs/banner.svg)
 
 > Every badge is an endorsement. Every README it lands on advertises the tool — the loop is the growth engine.
 
-VibeLens answers the defining question of 2026 for any public GitHub repository:
+VibeIndex answers the defining question of 2026 for any public GitHub repository:
 
 **"How much of this was actually vibe-coded?"**
 

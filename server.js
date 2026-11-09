@@ -1,4 +1,4 @@
-// server.js — VibeLens web service. Zero dependencies; node >= 18.
+// server.js — VibeIndex web service. Zero dependencies; node >= 18.
 //   node server.js       → http://localhost:3000
 //   GITHUB_TOKEN=...     → optional, raises GitHub API rate limits
 
@@ -44,7 +44,33 @@ function page(title, body) {
   return `<!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>${esc(title)} · VibeLens</title>
+<title>${esc(title)} · VibeIndex — AI vibe-code detector for GitHub repos</title>
+<meta name="description" content="VibeIndex checks any public GitHub repository and estimates what share of recent commits carry AI-agent fingerprints (Copilot, Claude, Cursor, Devin). Get a Vibe Index 0-100, evidence trail, shareable SVG card and README badge. No install, no login.">
+<meta name="keywords" content="vibe index, vibe coding, vibe-coded, ai code detector, github repo analysis, copilot commits, claude code, cursor, ai agents, readme badge, svg card, open source health">
+<link rel="canonical" href="https://github.com/RetroNyym/vibeindex">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="VibeIndex">
+<meta property="og:title" content="VibeIndex — how much of this repo was vibe-coded?">
+<meta property="og:description" content="Paste owner/repo, get a Vibe Index (0-100), the evidence trail, and a shareable SVG card + README badge. Works for any public GitHub repository.">
+<meta property="og:url" content="https://github.com/RetroNyym/vibeindex">
+<meta property="og:image" content="https://raw.githubusercontent.com/RetroNyym/vibeindex/main/docs/banner.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="VibeIndex — how much of this repo was vibe-coded?">
+<meta name="twitter:description" content="AI fingerprint meter for public GitHub repositories. Zero install, free forever.">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/RetroNyym/vibeindex/main/docs/banner.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "VibeIndex",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Any",
+  "description": "Checks any public GitHub repository for AI-agent fingerprints in its commit trail and returns a Vibe Index (0-100) with a shareable SVG card and README badge.",
+  "url": "https://github.com/RetroNyym/vibeindex",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "featureList": "Vibe Index score, evidence trail, SVG card, README badge, JSON API"
+}
+</script>
 <style>
   body{background:${PAGES.lk};color:${PAGES.fg};font-family:'Segoe UI',-apple-system,Arial,sans-serif;margin:0;min-height:100vh;display:flex;flex-direction:column}
   main{max-width:780px;margin:0 auto;padding:48px 24px;width:100%;box-sizing:border-box}
@@ -57,12 +83,12 @@ function page(title, body) {
   .evi{color:${PAGES.mut};font-size:14px;line-height:1.8}
   footer{color:${PAGES.mut};font-size:12px;text-align:center;padding:24px}
   .card{background:${PAGES.pan};border:1px solid ${PAGES.bor};border-radius:12px;padding:20px;margin:20px 0}
-</style></head><body><main>${body}</main><footer>✦ VibeLens — does this repo smell like an agent? · heuristic, opinionated, free</footer></body></html>`;
+</style></head><body><main>${body}</main><footer>✦ VibeIndex — does this repo smell like an agent? · heuristic, opinionated, free</footer></body></html>`;
 }
 
 function landing() {
-  return page("VibeLens", `
-  <h1 style="font-size:40px;margin-bottom:8px">🧬 VibeLens</h1>
+  return page("VibeIndex", `
+  <h1 style="font-size:40px;margin-bottom:8px">🧬 VibeIndex</h1>
   <p style="color:${PAGES.mut};font-size:17px;margin-top:0">How much of this repo was <em>actually</em> written by an AI agent?
   Paste any public GitHub repository and get a receipt.</p>
   <form onsubmit="go(event)" style="display:flex;gap:10px;align-items:center">
@@ -77,7 +103,7 @@ function landing() {
   <div class="card">
     <h3 style="margin-top:0">Embed it</h3>
     <pre>&lt;img src="/api/badge/OWNER/REPO.svg" alt="vibe index"&gt;
-&lt;img src="/api/card/OWNER/REPO.svg" alt="vibelens card"&gt;</pre>
+&lt;img src="/api/card/OWNER/REPO.svg" alt="VibeIndex card"&gt;</pre>
     <p style="color:${PAGES.mut};font-size:13px">JSON API: <code>/api/analyze/:owner/:repo.json</code> · Documentation in the README.</p>
   </div>
   <script>
@@ -88,7 +114,7 @@ function landing() {
 
 function resultHtml(data) {
   const embed = `[![vibe index](/api/badge/${data.fullName}.svg)](/r/${data.fullName})`;
-  const cardEmbed = `[![vibelens](/api/card/${data.fullName}.svg)](/r/${data.fullName})`;
+  const cardEmbed = `[![VibeIndex](/api/card/${data.fullName}.svg)](/r/${data.fullName})`;
   const sig = data.signal || {};
   const evidence = data.evidence && data.evidence.length
     ? data.evidence.map((e) => `<div>⤷ ${esc(e)}</div>`).join("\n")
@@ -223,6 +249,6 @@ function sendHtml(res, status, html) {
 }
 
 server.listen(PORT, () => {
-  console.log(`✦ VibeLens listening on http://localhost:${PORT}`);
+  console.log(`✦ VibeIndex listening on http://localhost:${PORT}`);
   console.log(process.env.GITHUB_TOKEN ? "  auth: GITHUB_TOKEN set" : "  auth: anonymous (60 req/h) — set GITHUB_TOKEN for more");
 });

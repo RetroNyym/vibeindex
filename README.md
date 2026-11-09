@@ -1,8 +1,10 @@
-# ✦ VibeLens
+# ✦ VibeIndex
+
+![VibeIndex banner](docs/banner.svg)
 
 > Her badge bir tanıtımdır. Koyduğu her README, aracın büyüme motoru olarak çalışır.
 
-VibeLens, 2026'nın tanımlayıcı sorusunu — **"Bu repo aslında ne kadar vibe-coded?"** — herhangi bir
+VibeIndex, 2026'nın tanımlayıcı sorusunu — **"Bu repo aslında ne kadar vibe-coded?"** — herhangi bir
 public GitHub deposu için yanıtlayan, sıfır bağımlılıklı bir web servisidir.
 
 `owner/repo` yapıştır → **Vibe Index (0–100)**, bir hüküm, arkasındaki **kanıt zinciri** ve
