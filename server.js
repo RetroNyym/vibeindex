@@ -22,12 +22,17 @@ function cacheSet(key, data) {
   cache.set(key, { data, at: Date.now() });
 }
 
-function ownerRepo(pathDesc) {
-  const parts = pathDesc.split("/").filter(Boolean);
+function ownerRepo(desc) {
+  let parts = String(desc).split("/").filter(Boolean);
+  // Accept full URLs: "https://github.com/owner/repo/releases"
+  if (parts[0] && /^https?:$/i.test(parts[0])) parts = parts.slice(1);
+  if (parts[0] && parts[0].toLowerCase() === "github.com") parts = parts.slice(1);
+  if (parts[0] && parts[0].toLowerCase() === "www.github.com") parts = parts.slice(1);
   if (parts.length < 2) return null;
-  const owner = parts[parts.length - 2];
-  const repo = parts[parts.length - 1].replace(/\.json$|\.svg$/, "");
-  if (!/^[A-Za-z0-9-_.]+$/.test(owner) || !/^[A-Za-z0-9-_.]+$/.test(repo)) return null;
+  const owner = parts[0];
+  // "owner/repo/<anything>" → owner/repo; also strip .json/.svg/.git suffixes
+  const repo = parts[1].replace(/\.(git|json|svg)$/i, "");
+  if (!/^[A-Za-z0-9_.-]+$/.test(owner) || !/^[A-Za-z0-9_.-]+$/.test(repo)) return null;
   return { owner, repo };
 }
 
@@ -76,7 +81,7 @@ function landing() {
     <p style="color:${PAGES.mut};font-size:13px">JSON API: <code>/api/analyze/:owner/:repo.json</code> · Documentation in the README.</p>
   </div>
   <script>
-    function go(e){e.preventDefault();const v=document.getElementById('q').value.trim().replace(/^https?:\\/\\/github\\.com\\//,'').replace(/\\.git$/,'');
+    function go(e){e.preventDefault();let v=document.getElementById('q').value.trim().replace(/^https?:\\/\\/www?\\./i,'').replace(/^https?:\\/\\//i,'').replace(/^github\\.com\\//i,'').split('/').slice(0,2).join('/');
     if(v) location.href='/r/'+v;}
   </script>`);
 }
